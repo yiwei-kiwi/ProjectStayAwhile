@@ -1,0 +1,40 @@
+Design for class Entities in pseudocode.
+Add more members/methods as see fit
+
+namespace ARPG:
+abstract class Entity:
+    protected member name //stdstring | char[] of the entity name, std getter and setter
+    //note: the vector class may need to be shared amongst all other classes, put the vector class in a common util.h file and make sure its under the ARPG namespace
+    protected member velocity //represented in speed and direction, i'd prefer not to do the whole x and y component thing again, virtual getter and setter
+    protected member location //maybe define a coordinate class in util.h
+    protected member team //an integer that represents the team that the entity belongs to, std getter and setter for now or whatever you see fit
+
+    public constructor(name, team, velocity)// typical constructor
+    pure virtual destructor() //signify an abstract class
+
+class Projectile publicly extends Entity:
+    protected member Effects[] //arr of effects the projectile will apply upon hit, note Effects will be a seperate class, forward declare it in header file, include Effects.h in .cpp file
+    public constructor(name, team, velocity, Effects[]) //Effects[] is a list of effects the projectil will have, maybe have it only be able to be set in the constructo
+    public static members Projectile projectiles //define all static objs here, ie fireball, arrow and whatever you see fit
+    @override destructor() //because you have to
+
+abstract class Character publicaly extends Entity:
+    protected member maxHP //int representing max hit points, std getter, but setter needs to adjust curHP accordingly to the new maxHP
+    protected member curHP //int representing current hp, std getter, but no setters
+    protected member maxMana //same as hp but with mana points
+    protected member curMana //same as curHP but with mana
+    public method applyEffect(Effect) //applies the Effect to the entity, leave this blank for now
+    //alternatively you can have only 2 methods, changeHealth and changeMana, when restoring, simply put in + number, and when damaging, put in - number
+    public method healHP(int) //increase current hp by that ammount, but no more than maxHP
+    public method damageHP(int) //decrease current hp by that ammount, maybe destroy obj if curHP is 0?
+    public method healMana(int) //same as hp but with mana
+    public method damageMana(int) //same as dmgHp but don't del this obj if mana = 0
+
+class Player publicaly extends Character:
+    //array of size 7 of slotted abilities - qwert lmouse + rmouse once again forward declare the abilities
+    //whatever you want the player to do
+
+class Mob publicaly extends Character:
+    //maybe an array of abilities mobs can use
+    //whatever creative shit you come up with, and statically define maybe 2 mobs
+    
