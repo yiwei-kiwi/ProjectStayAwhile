@@ -2,14 +2,13 @@ Design for class Entities in pseudocode.
 Add more members/methods as see fit
 
 namespace ARPG:
-abstract class Entity:
+abstract class Entity extends class Object:
     protected member name //stdstring | char[] of the entity name, std getter and setter
     //note: the vector class may need to be shared amongst all other classes, put the vector class in a common util.h file and make sure its under the ARPG namespace
     protected member velocity //represented in speed and direction, i'd prefer not to do the whole x and y component thing again, virtual getter and setter
-    protected member location //maybe define a coordinate class in util.h
     protected member team //an integer that represents the team that the entity belongs to, std getter and setter for now or whatever you see fit
 
-    public constructor(name, team, velocity)// typical constructor
+    public constructor(name, team, velocity, location)// typical constructor
     pure virtual destructor() //signify an abstract class
 
 class Projectile publicly extends Entity:
