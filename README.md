@@ -11,7 +11,7 @@ Wizard - High sustained dmg, low health low defense, but has util spells; player
 
 Thief - High burst dmg, even lower health relies on speed; player controlled
 
-Knight - mediocre , big and beefy, slow but powerful; player controlled
+Knight - Mediocre dmg, big and beefy, slow but powerful; player controlled
 
 Heathen - Enemy mob that attacks the player(s) with its fists; weakest mob; very common mob 
 
