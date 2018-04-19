@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
