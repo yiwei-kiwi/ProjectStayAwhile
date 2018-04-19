@@ -5,10 +5,8 @@ namespace ARPG {
 	class Entity : public Object
 	{
 	public:
-		Entity(std::string name, Vector velocity, Coord location, unsigned int teamID = 0);
+		Entity(std::string name, Vector velocity, unsigned int teamID, Coord location);
 		virtual ~Entity() = 0;
-		unsigned int getTeamID() const;
-		void setTeamID(unsigned int teamID);
 	protected:
 		const std::string name;
 		Vector velocity;
