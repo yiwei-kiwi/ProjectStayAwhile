@@ -1,68 +1,53 @@
 #include "Character.h"
 
+int ARPG::Character::getMaxHP() const
+{
+	return this->maxHP;
+}
+
+int ARPG::Character::getCurHP() const
+{
+	return this->curHP;
+}
+
+int ARPG::Character::getMaxMana() const
+{
+	return this->maxMana;
+}
+
+int ARPG::Character::getCurMana() const
+{
+	return this->curMana;
+}
+
+void ARPG::Character::setMaxHP(int maxHP)
+{
+	if (this->curHP > maxHP)
+		this->curHP = (this->curHP / this->maxHP) * maxHP;
+	this->maxHP = maxHP;
+}
+
+void ARPG::Character::changeHP(int hpDiff)
+{
+	this->curHP += hpDiff;
+	if (this->curHP <= 0) {
+		this->curHP = 0;
+	}
+}
+
+void ARPG::Character::setMaxMana(int maxMana)
+{
+	if (this->curMana > maxMana)
+		this->curHP = (this->curMana / this->maxMana) * maxMana;
+	this->maxMana = maxMana;
+}
+
+void ARPG::Character::changeMana(int manaDiff)
+{
+	this->curMana += manaDiff;
+}
+
 //void ARPG::Character::applyEffect(Effect type)
 //{
 //
 //}
-
-int ARPG::Character::getMaxHP()
-{
-	return maxHP;
-}
-
-void ARPG::Character::setMaxHP(int newHP)
-{
-	if (newHP <= maxHP)
-	{
-		maxHP = newHP;
-	}
-}
-
-int ARPG::Character::getCurHP()
-{
-	return curHP;
-}
-
-int  ARPG::Character::getMaxMana()
-{
-	return maxMana;
-}
-
-void ARPG::Character::setMaxMana(int newMana)
-{
-	if (newMana <= maxMana)
-	{
-		maxMana = newMana;
-	}
-}
-
-int ARPG::Character::getCurMana()
-{
-	return curMana;
-}
-
-void ARPG::Character::healHP(int newHP)
-{
-	if (curHP + newHP < maxHP)
-	{
-		curHP = curHP + newHP;
-    }
-}
-
-void ARPG::Character::damageHP(int newHP)
-{
-	curHP = curHP - newHP;
-}
-
-void ARPG::Character::healMana(int newMana)
-{
-	if (curMana + newMana < maxMana)
-	{
-		curMana = curMana + newMana;
-	}
-}
-
-void ARPG::Character::damagaMana(int newMana)
-{
-	curMana = curMana - newMana;
-}

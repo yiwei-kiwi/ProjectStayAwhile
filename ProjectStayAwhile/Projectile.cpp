@@ -2,7 +2,7 @@
 
 
 
-ARPG::Projectile::Projectile(std::string name, Vector velocity, Coord location, const std::vector<Effect*> &effectList, unsigned int teamID) :
+ARPG::Projectile::Projectile(std::string name, Vector velocity, Coord location, const std::vector<Effect *> &effectList, unsigned int teamID) :
 	Entity(name, velocity, location, teamID), effects(effectList)
 {
 }
