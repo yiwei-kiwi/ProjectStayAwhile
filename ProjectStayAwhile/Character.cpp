@@ -1,5 +1,14 @@
 #include "Character.h"
 
+ARPG::Character::Character(std::string name, Coord location, unsigned teamID, int maxHP, int maxMana):
+	Entity(name, {0,360}, teamID)
+{
+	this->curHP = maxHP;
+	this->maxHP = maxHP;
+	this->curMana = maxMana;
+	this->maxMana = maxMana;
+}
+
 int ARPG::Character::getMaxHP() const
 {
 	return this->maxHP;
