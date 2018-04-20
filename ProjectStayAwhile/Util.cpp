@@ -38,8 +38,3 @@ char ARPG::Object::getType() const
 {
 	return this->type;
 }
-
-std::vector<Coord>& ARPG::Object::getOccupied()
-{
-	return this->occupied;
-}
