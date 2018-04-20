@@ -20,12 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
