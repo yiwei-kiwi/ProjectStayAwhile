@@ -5,7 +5,7 @@ namespace ARPG {
 	class Effect;
 	class Character : public Entity {
 	public:
-		Character(std::string name, Coord location, unsigned teamID, int maxHP, int maxMana);
+		Character(const std::string &name, Coord location, unsigned teamID, int maxHP, int maxMana);
 		virtual ~Character() = 0;
 
 		int getMaxHP() const;

@@ -1,6 +1,6 @@
 #include "Character.h"
 
-ARPG::Character::Character(std::string name, Coord location, unsigned teamID, int maxHP, int maxMana):
+ARPG::Character::Character(const std::string &name, Coord location, unsigned teamID, int maxHP, int maxMana):
 	Entity(name, {0,360}, teamID)
 {
 	this->curHP = maxHP;
