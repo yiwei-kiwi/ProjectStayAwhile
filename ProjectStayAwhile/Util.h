@@ -33,12 +33,17 @@ namespace ARPG {
 		void setLocation(Coord newLocation);
 		Coord getLocation() const;
 		char getType() const;
+		void setTexture(const sf::Texture *texture);
+		void setTextureRect(const sf::IntRect &rect);
+		
+
 		int length;
 		int width;
 
-		sf::RectangleShape sfmlObj;
+		
 	protected:
 		Coord location;//where the start of the object is
 		const char type; //type of object, e for entity or s for structure, entity can't be turned into a structure so its const
+		sf::RectangleShape sfmlObj;
 	};
 }
