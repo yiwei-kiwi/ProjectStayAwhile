@@ -25,6 +25,7 @@
     <ClInclude Include="NPC.h" />
     <ClInclude Include="PlayerClass.h" />
     <ClInclude Include="Projectile.h" />
+    <ClInclude Include="Structure.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,7 @@
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="PlayerClass.cpp" />
     <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Structure.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
