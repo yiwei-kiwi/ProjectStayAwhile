@@ -23,6 +23,7 @@ namespace ARPG {
 		bool willObjCollide(const Object &object);
 		Object* removeObject(Coord location);
 		bool addObject(Object *newObject);
+		bool moveObject(Coord old);
 	private:
 		const int length;
 		const int width;

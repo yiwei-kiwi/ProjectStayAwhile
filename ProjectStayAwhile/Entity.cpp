@@ -2,7 +2,7 @@
 #include <cmath>
 #define PI 3.14159265
 
-ARPG::Entity::Entity(const std::string &name, Vector velocity, Coord location, unsigned int teamID = 0) : Object(location, 'e'), name(name), velocity(velocity), teamID(teamID) {}
+ARPG::Entity::Entity(const std::string &name, Vector velocity, Coord location, unsigned int teamID) : Object(location, 'e'), name(name), velocity(velocity), teamID(teamID) {}
 
 unsigned int ARPG::Entity::getTeamID() const
 {
