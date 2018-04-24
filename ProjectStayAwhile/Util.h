@@ -35,7 +35,7 @@ namespace ARPG {
 		char getType() const;
 		void setTexture(const sf::Texture *texture);
 		void setTextureRect(const sf::IntRect &rect);
-		
+		virtual sf::RectangleShape& getDrawable();
 
 		int length;
 		int width;
