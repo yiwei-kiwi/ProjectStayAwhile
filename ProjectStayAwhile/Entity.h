@@ -9,6 +9,7 @@ namespace ARPG {
 		virtual ~Entity() = 0;
 		unsigned int getTeamID() const;
 		void setTeamID(unsigned int teamID);
+		Vector getVelocity() const;
 	protected:
 		const std::string name;
 		Vector velocity;
