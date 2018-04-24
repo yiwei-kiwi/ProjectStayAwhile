@@ -71,11 +71,54 @@ ARPG::Object * ARPG::Map::removeObject(Coord location)
 {
 	if (this->getObjectAt(location)->getLocation() == location) {
 		
+	Object *returnValue = nullptr;
+	if (this->getObjectAt(location) != nullptr) {
+		if (this->getObjectAt(location)->getLocation() == location) {
+			returnValue = this->getObjectAt(location);
+			Coord newLocation = location;
+			for (int len = 0; len < returnValue->length; ++len) {
+				for (int wid = 0; wid < returnValue->width; ++wid) {
+					newLocation = location;
+					newLocation.x += len;
+					newLocation.y += wid;
+					this->getObjectAt(newLocation) = nullptr;
+				}
+			}
+		}
 	}
 	return nullptr;
+	return returnValue;
 }
 
 bool ARPG::Map::addObject(Object * newObject)
 {
 	return false;
+	if (!this->willObjCollide(*newObject)) {
+		map[newObject->getLocation().x][newObject->getLocation().y].setObj(newObject);
+		Coord newLocation = newObject->getLocation();
+		for (int len = 0; len < newObject->length; ++len) {
+			for (int wid = 0; wid < newObject->width; ++wid) {
+				newLocation = newObject->getLocation();
+				newLocation.x += len;
+				newLocation.y += wid;
+				map[newLocation.x][newLocation.y].setObj(newObject);
+			}
+		}
+	}
+	else{
+		return false;
+	}
+	return true;
+}
+
+bool ARPG::Map::moveObject(Coord old)
+{
+	auto object = this->removeObject(old);
+	if (object != nullptr) {
+		this->addObject(object);
+	}
+	else {
+		return false;
+	}
+	return true;
 }
