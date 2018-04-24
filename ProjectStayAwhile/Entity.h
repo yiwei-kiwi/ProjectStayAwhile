@@ -10,6 +10,8 @@ namespace ARPG {
 		unsigned int getTeamID() const;
 		void setTeamID(unsigned int teamID);
 		Vector getVelocity() const;
+		void move();
+
 	protected:
 		const std::string name;
 		Vector velocity;

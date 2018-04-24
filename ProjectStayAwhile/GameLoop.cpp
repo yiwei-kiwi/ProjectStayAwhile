@@ -3,10 +3,15 @@
 
 GameLoop::GameLoop(int mapLength, int mapWidth)
 {
-
+	mLength = mapLength;
+	mWidth = mapWidth;
 }
 
 void GameLoop::moveEntity()
 {
-	getVelocity();
+	ARPG::Map game(mLength, mWidth);
+
+	game.getObjectAt(mLength);
+
+
 }

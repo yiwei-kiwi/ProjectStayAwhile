@@ -38,3 +38,18 @@ char ARPG::Object::getType() const
 {
 	return this->type;
 }
+
+void ARPG::Object::setTexture(const sf::Texture * texture)
+{
+	this->sfmlObj.setTexture(texture);
+}
+
+void ARPG::Object::setTextureRect(const sf::IntRect & rect)
+{
+	this->sfmlObj.setTextureRect(rect);
+}
+
+sf::RectangleShape & ARPG::Object::getDrawable()
+{
+	return this->sfmlObj;
+}

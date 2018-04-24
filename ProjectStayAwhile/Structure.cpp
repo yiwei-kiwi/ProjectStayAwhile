@@ -13,3 +13,4 @@ bool ARPG::Structure::isObstruction() const
 {
 	return true;
 }
+
